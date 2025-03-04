@@ -21,8 +21,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
+        dd($request->user()->followingTweets());
         return view('home');
     }
 }
