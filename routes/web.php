@@ -9,6 +9,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/api/timeline', [App\Http\Controllers\Api\TimelineController::class, 'index']);
 /*
 Auth::routes();
 
