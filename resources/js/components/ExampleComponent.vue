@@ -1,10 +1,11 @@
 <template>
-    aa
-    {{ user }}
+    
+      {{ user }}
+
     <div class="container">
-        <div class="row justify-content-center bg-blue-500">
+        <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
+                <div class="card  bg-blue-500">
                     <div class="card-header">Example Component</div>
 
                     <div class="card-body">
