@@ -30,10 +30,18 @@ Object.entries(import.meta.glob('./**/*.vue', { eager: true })).forEach(([path, 
     app.component(path.split('/').pop().replace(/\.\w+$/, ''), definition.default);
 });
 
+import Vuex from 'vuex';
+import timeline from './store/timeline.js';
+const store = new Vuex.Store({
+    modules:{
+        timeline
+    }
+});
+
 /**
  * Finally, we will attach the application instance to a HTML element with
  * an "id" attribute of "app". This element is included with the "auth"
  * scaffolding. Otherwise, you will need to add an element yourself.
  */
 
-app.mount('#app');
+app.use(store).mount('#app');
