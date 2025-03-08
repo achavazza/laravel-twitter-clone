@@ -32,6 +32,8 @@ Object.entries(import.meta.glob('./**/*.vue', { eager: true })).forEach(([path, 
 
 import Vuex from 'vuex';
 import timeline from './store/timeline.js';
+import {ObserveVisibility} from 'vue-observe-visibility';
+
 const store = new Vuex.Store({
     modules:{
         timeline
@@ -44,4 +46,14 @@ const store = new Vuex.Store({
  * scaffolding. Otherwise, you will need to add an element yourself.
  */
 
-app.use(store).mount('#app');
+app
+.use(store)
+.directive('observe-visibility', {
+    beforeMount: (el, binding, vnode) => {
+        vnode.context = binding.instance;
+        ObserveVisibility.bind(el, binding, vnode);
+    },
+    update: ObserveVisibility.update,
+    unbind: ObserveVisibility.unbind
+})
+.mount('#app');

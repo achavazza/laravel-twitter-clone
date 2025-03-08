@@ -5,7 +5,7 @@
     <div class="w-3/12">
         nav
     </div>
-    <div class="w-7/12 border-gray-800 border-1 border-t-0 border-b-0 h-screen">
+    <div class="w-7/12 border-gray-800 border-1 border-t-0 border-b-0 min-h-screen">
         <app-timeline />   
     </div>
 <!-- 
