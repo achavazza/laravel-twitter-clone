@@ -16,6 +16,17 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <script>
+       
+        window.User = {
+            id: '{{ optional(Auth::user())->id }}',
+            avatar: '{{ optional(Auth::user())->avatar() }}',
+            //name: '{{ Auth::user() ? Auth::user()->name : null }}',
+            //email: '{{ Auth::user() ? Auth::user()->email : null }}',
+            //role: '{{ Auth::user() ? Auth::user()->role : null }}',       
+        }
+    </script>
 </head>
 <body>
     <div id="app">

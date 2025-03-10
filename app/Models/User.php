@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\hasManyThrough;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class User extends Authenticatable
 {
@@ -74,5 +75,10 @@ class User extends Authenticatable
             'id',          //1st local key
             'following_id' //2nd local key
         );
+    }
+
+    public function tweets() : hasMany
+    {
+        return $this->hasMany(Tweet::class);
     }
 }

@@ -10,6 +10,10 @@ class Tweet extends Model
 {
     //
     use HasFactory;
+
+    //public guarded = []
+    protected $fillable = ['body'];
+    
     protected static function newFactory(): TweetFactory
     {
         return TweetFactory::new();

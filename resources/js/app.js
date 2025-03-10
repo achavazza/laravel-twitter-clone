@@ -40,6 +40,9 @@ const store = new Vuex.Store({
     }
 });
 
+
+app.config.globalProperties.$user = User;
+
 /**
  * Finally, we will attach the application instance to a HTML element with
  * an "id" attribute of "app". This element is included with the "auth"
