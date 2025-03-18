@@ -18,8 +18,12 @@ class TweetResource extends JsonResource
         return [
             'id' => $this->id,
             'body' => $this->body,
-            'user' => new UserResource($this->user)
-            //'created_at' => $this->created_at,
+            'user' => new UserResource($this->user),
+            'created_at' => $this->created_at->timestamp,
+            'type' => $this->type,
+
+            //its a trick we create a copy using the relation
+            'original_tweet' => new TweetResource($this->originalTweet)
             //'updated_at' => $this->updated_at,
         ];
         /*return parent::toArray($request);*/

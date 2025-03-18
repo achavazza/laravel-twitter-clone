@@ -12,7 +12,8 @@ class TweetFactory extends Factory
     {
         return [
             'body' => $this->faker->paragraph(1, true),
-            'user_id' => $this->faker->randomElement([1, 2]), // Associate with a user
+            'user_id' => $this->faker->randomElement([1, 3]), // Associate with a user
+            'type' => 'tweet'
         ];
     }
 }
