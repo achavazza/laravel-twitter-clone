@@ -4,7 +4,6 @@
             <img :src="$user.avatar" class="rounded-full w-12 h-12" />
         </div>
         <div class="flex-grow">
-            {{ form }}
             <textarea v-model="form.body" class="bg-gray-600 w-full outline-none text-gray-300 text-lg resize-none mb-2 p-2" placeholder="What's happening?" autofocus></textarea>
             <div class="flex justify-between">
                 <!-- Actions rweteets replies -->
@@ -24,6 +23,7 @@ export default {
     methods: {
         async submit(){
             await axios.post('/api/tweets', this.form );
+            this.form.body = "";
         }
     }
 }
