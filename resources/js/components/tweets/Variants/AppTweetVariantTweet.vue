@@ -4,8 +4,8 @@
         <p class="text-gray-300 white-space-pre-wrap">
             {{ tweet.body }}
         </p>
+        <app-tweet-action-group />
     </div>
-    <app-tweet-action-group />
 </template>
 <script>
 export default{
